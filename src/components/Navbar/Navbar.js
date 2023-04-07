@@ -38,11 +38,11 @@ function Navbar() {
                         <a href="#"> <AiOutlineInstagram /></a>
                     </div>
 
-                    <img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "2" } : { marginTop: "0px" }} src={logo} alt="" />
+                    <img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "3" } : { marginTop: "0px" }} src={logo} alt="" />
 
-                    <div style={scrollClick ? { top: "0px", zIndex: "1", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }} className="icon2">
-                        <a style={scrollClick ? { color: "black" } : { color: "#fff" }} href="#"><BsSearch /></a>
-                        <a style={scrollClick ? { color: "black" } : { color: "#fff" }} href="#"><BiShoppingBag /></a>
+                    <div style={scrollClick ? { top: "0px", zIndex: "3", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }} className="icon2">
+                        <a style={scrollClick ? { color: "black" } : { color: "#fff", }} href="#"><BsSearch /></a>
+                        <a style={scrollClick ? { color: "black" } : { color: "#fff", }} href="#"><BiShoppingBag /></a>
 
                         <div className='menyu_icon' onClick={() => setIsMobile(!isMobile)}>
                             {isMobile ? (<FaTimes onClick={toggleModal} />) : (<FaBars onClick={toggleModal} />)}
@@ -50,7 +50,7 @@ function Navbar() {
                     </div>
                 </div>
 
-                <div style={scrollClick ? { position: "fixed", background: "#fff", color: "black", paddingLeft: "5px", top: 0, transition: "1s" } : { background: "unset" }} className="nav_text">
+                <div style={scrollClick ? { position: "fixed", background: "#fff", color: "black", paddingLeft: "5px", top: 0, transition: "1s", zIndex: "2" } : { background: "unset" }} className="nav_text">
                     <ul className={isMobile ? "media" : ""}>
                         <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Home</li>
                         <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Our Story</li>
