@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay'
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai"
-import json from "../StaticData"
+import json from "../../../StaticData"
 import { AiFillEye } from "react-icons/ai"
 import { BiShoppingBag } from "react-icons/bi"
 import From from '../From/From';

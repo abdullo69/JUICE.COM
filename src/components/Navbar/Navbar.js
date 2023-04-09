@@ -75,8 +75,6 @@ function Navbar() {
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="/"><li>Home</li></a>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-story"><li>Our Story</li></a>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-ingredients"><li>Our Ingredients</li></a>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Recipes</li></a>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Store Locator</li></a>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Shop</li></a>
 
                     </ul>
@@ -89,9 +87,7 @@ function Navbar() {
                                 <a href="/"> <li>Home</li></a>
                                 <a href="our-story"><li>Our Story</li></a>
                                 <a href="our-ingdients"><li>Our Ingredients</li></a>
-                                <a href="recipes"><li>Recipes</li></a>
-                                <li>Store Locator</li>
-                                <li>Shop</li>
+                                <a href="shop"><li>Shop</li></a>
                             </ul>
 
 
