@@ -1,0 +1,165 @@
+.deli {
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+  background-color: #FFEDF9;
+}
+.deli .deli_navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 120px;
+}
+.deli .deli_navbar p {
+  padding-top: 10px;
+}
+.deli .a {
+  width: 500px;
+  height: blue;
+  background-color: red;
+}
+
+.swiper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 450px;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+}
+.swiper .left {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(80, 80, 80);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  font-size: 20px;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6F3AAC;
+  background-color: #fff;
+  margin-top: -180px;
+  color: black;
+  border: 1px solid gray;
+  transition: 0.5s;
+}
+.swiper .left:hover {
+  border: 1px solid aqua;
+}
+.swiper .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(80, 80, 80);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  font-size: 20px;
+  z-index: 999;
+  cursor: pointer;
+  color: #6F3AAC;
+  background-color: #fff;
+  margin-top: -180px;
+  color: black;
+  border: 1px solid gray;
+  transition: 0.5s;
+}
+.swiper .right:hover {
+  border: 1px solid aqua;
+}
+.swiper .swiper-pagination {
+  z-index: 999;
+  cursor: pointer;
+  color: #fff;
+}
+.swiper .card {
+  position: relative;
+  height: auto;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+.swiper .card img {
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+}
+.swiper .card .img2 {
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.swiper .card .card_text {
+  padding-left: 20px;
+  transition: 0.5s;
+}
+.swiper .card .card_text h1 {
+  font-size: 18px;
+  font-weight: 100;
+  padding-top: 10px;
+}
+.swiper .card .card_text .p {
+  padding-top: 7px;
+  transition: 0.5s;
+  height: 50px;
+}
+.swiper .card:hover .img2 {
+  transition: 1s;
+  display: block;
+}
+.swiper .card:hover .p {
+  display: none;
+}
+.swiper .card .card_icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin-top: 10px;
+  margin-left: -15px;
+  display: none;
+}
+.swiper .card:hover .card_icon {
+  display: flex;
+  font-size: 13px;
+  height: 50px;
+  padding-top: 0px;
+}
+
+.a {
+  width: 90%;
+  height: 350px;
+  position: absolute;
+  margin-top: -450px;
+  margin: auto;
+  z-index: 1;
+  background-color: red;
+}
+
+@media (max-width: 840px) {
+  .deli .deli_navbar {
+    font-size: 10px;
+  }
+}
+@media (max-width: 525px) {
+  .deli .deli_navbar {
+    font-size: 7px;
+  }
+}/*# sourceMappingURL=Deli.css.map */

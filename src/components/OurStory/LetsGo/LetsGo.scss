@@ -1,0 +1,35 @@
+.letsgo {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../images/bg.jpg");
+    background-repeat: none;
+    background-size: cover;
+    margin-top: 40px;
+
+    h1 {
+        font-size: 70px;
+        color: #fff;
+    }
+
+    button {
+        width: 170px;
+        height: 60px;
+        background-color: #E9A331;
+        color: #fff;
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: #e9cd31;
+        }
+    }
+}

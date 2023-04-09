@@ -1,0 +1,35 @@
+.escape {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    flex-wrap: wrap;
+
+    .escape_img {
+        width: 700px;
+        height: 500px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .escape_text {
+        width: 500px;
+        height: auto;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            width: 80%;
+            padding-top: 15px;
+            font-size: 23px;
+            line-height: 40px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.browse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: 40px;
+  background-image: url("../../../images/citrus.png");
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  flex-direction: column;
+}
+.browse h1 {
+  font-size: 70px;
+}
+.browse button {
+  width: 230px;
+  height: 60px;
+  color: #fff;
+  background-color: #10A04C;
+  font-size: 17px;
+  border: none;
+  margin-top: 60px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.browse button:hover {
+  margin-top: 50px;
+  background-color: rgba(16, 160, 76, 0.6705882353);
+}/*# sourceMappingURL=Browse.css.map */

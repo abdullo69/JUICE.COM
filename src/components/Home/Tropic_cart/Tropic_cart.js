@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Tropic_cart.scss"
-import screen from "../../images/scren1.png"
-import screen2 from "../../images/scren2.png"
-import scree3 from "../../images/scren3.png"
+import screen from "../../../images/scren1.png"
+import screen2 from "../../../images/scren2.png"
+import scree3 from "../../../images/scren3.png"
 import From2 from '../From2/From2'
 function Tropic_cart() {
     return (

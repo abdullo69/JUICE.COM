@@ -1,0 +1,129 @@
+.from {
+  display: flex;
+  width: 90%;
+  height: auto;
+  padding-top: 50px;
+  margin: auto;
+}
+.from .from_images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 65px;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+.from .from_images .from_img {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+.from .from_images .from_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.from .from_images .from_img img:hover {
+  transform: scale(1.1);
+}
+.from .from_text {
+  text-align: center;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  padding-top: 50px;
+  background-color: #F7CFBB;
+}
+.from .from_text h1 {
+  width: 50%;
+  font-size: 50px;
+}
+.from .from_text p {
+  width: 50%;
+  font-size: 22px;
+  line-height: 40px;
+  padding-top: 30px;
+}
+.from .from_text h5 {
+  height: 200px;
+  font-size: 20px;
+  padding-top: 30px;
+  margin-left: -210px;
+  color: #EF4B4B;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.from .from_text h5:hover {
+  padding-left: 10px;
+}
+
+@media (max-width: 1000px) {
+  .from {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    flex-wrap: wrap;
+  }
+  .from .from_images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 65px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  .from .from_images .from_img {
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+    overflow: hidden;
+  }
+  .from .from_images .from_img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .from .from_images .from_img img:hover {
+    transform: scale(1.1);
+  }
+  .from .from_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #F7CFBB;
+    margin: auto;
+  }
+  .from .from_text h1 {
+    width: 100%;
+    font-size: 50px;
+  }
+  .from .from_text p {
+    width: 100%;
+    font-size: 22px;
+    line-height: 35px;
+    padding-top: 30px;
+  }
+  .from .from_text h5 {
+    font-size: 20px;
+    padding-top: 30px;
+    margin-left: -210px;
+    color: #EF4B4B;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .from .from_text h5:hover {
+    padding-left: 10px;
+  }
+}/*# sourceMappingURL=From2.css.map */

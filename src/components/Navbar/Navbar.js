@@ -1,23 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
 import { AiOutlineTwitter, AiOutlineInstagram, AiOutlineBars } from "react-icons/ai"
 import { FaBars, FaFacebookF, FaTimes } from "react-icons/fa"
-import logo from "../images/logo.png"
+import logo from "../../images/logo.png"
 import { BsSearch } from "react-icons/bs"
 import { BiShoppingBag } from "react-icons/bi"
+import { useLocation } from 'react-router-dom'
 function Navbar() {
     const [isMobile, setIsMobile] = useState(false)
     const [scrollClick, setScrollClick] = useState(false)
-    console.log(scrollClick)
-    window.addEventListener('scroll', function () {
-        console.log(window.scrollY)
+    const [getColor, setColor] = useState(false)
+    // console.log(scrollClick)
 
-        if (window.scrollY > 120) {
-            setScrollClick(true)
+    useEffect(() => {
+        window.addEventListener('scroll', function () {
+            console.log(window.scrollY)
+
+            if (window.scrollY > 120) {
+                setScrollClick(true)
+            } else {
+                setScrollClick(false)
+            }
+        })
+    }, [window.scrollY])
+
+
+    const location = useLocation().pathname
+    console.log(getColor)
+    useEffect(() => {
+
+        if (location !== "/" && "/juice.com") {
+            setColor(true)
         } else {
-            setScrollClick(false)
+            setColor(false)
         }
-    })
+
+
+    }, [location])
+
 
     const [modal, setModal] = useState(false)
     const toggleModal = () => {
@@ -25,7 +45,7 @@ function Navbar() {
     }
     return (
         <div>
-            <div className="navbar">
+            <div className={`navbar ${getColor ? "black" : ""} `}>
                 <div className="nav_sub">
                     <p>Subscribe and save. Receive 10% off your order if you sign up for our subscription!</p>
                 </div>
@@ -38,37 +58,38 @@ function Navbar() {
                         <a href="#"> <AiOutlineInstagram /></a>
                     </div>
 
-                    <img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "3" } : { marginTop: "0px" }} src={logo} alt="" />
+                    <a href="/"><img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "3" } : { marginTop: "0px" }} src={logo} alt="" /></a>
 
-                    <div style={scrollClick ? { top: "0px", zIndex: "3", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }} className="icon2">
-                        <a style={scrollClick ? { color: "black" } : { color: "#fff", }} href="#"><BsSearch /></a>
-                        <a style={scrollClick ? { color: "black" } : { color: "#fff", }} href="#"><BiShoppingBag /></a>
+                    <div className={`icon2 ${getColor ? "black" : ""} `} style={scrollClick ? { top: "0px", zIndex: "3", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }}>
+                        <a className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BsSearch /></a>
+                        <a className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BiShoppingBag /></a>
 
-                        <div className='menyu_icon' onClick={() => setIsMobile(!isMobile)}>
+                        <div className={`menyu_icon ${getColor ? "black" : ""} `} onClick={() => setIsMobile(!isMobile)}>
                             {isMobile ? (<FaTimes onClick={toggleModal} />) : (<FaBars onClick={toggleModal} />)}
                         </div>
                     </div>
                 </div>
 
-                <div style={scrollClick ? { position: "fixed", background: "#fff", color: "black", paddingLeft: "5px", top: 0, transition: "1s", zIndex: "2" } : { background: "unset" }} className="nav_text">
+                <div style={scrollClick ? { position: "fixed", background: "white", color: "black", paddingLeft: "5px", top: 0, transition: "1s", zIndex: "2" } : { background: "unset" }} className="nav_text">
                     <ul className={isMobile ? "media" : ""}>
-                        <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Home</li>
-                        <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Our Story</li>
-                        <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Our Ingredients</li>
-                        <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Recipes</li>
-                        <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Store Locator</li>
-                        <li style={scrollClick ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}>Shop</li>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="/"><li>Home</li></a>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-story"><li>Our Story</li></a>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-ingredients"><li>Our Ingredients</li></a>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Recipes</li></a>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Store Locator</li></a>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Shop</li></a>
+
                     </ul>
                 </div>
 
                 {
                     modal && (
-                        <div style={scrollClick ? { position: "fixed" } : { position: "absolute" }} className="media_ul">
+                        <div style={scrollClick ? { position: "fixed" } : { position: "absolute" }} className={`media_ul ${getColor ? "black" : ""} `} >
                             <ul>
-                                <li>Home</li>
-                                <li>Our Story</li>
-                                <li>Our Ingredients</li>
-                                <li>Recipes</li>
+                                <a href="/"> <li>Home</li></a>
+                                <a href="our-story"><li>Our Story</li></a>
+                                <a href="our-ingdients"><li>Our Ingredients</li></a>
+                                <a href="recipes"><li>Recipes</li></a>
                                 <li>Store Locator</li>
                                 <li>Shop</li>
                             </ul>

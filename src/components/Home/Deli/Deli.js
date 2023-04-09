@@ -16,12 +16,30 @@ import json from "../StaticData"
 import { AiFillEye } from "react-icons/ai"
 import { BiShoppingBag } from "react-icons/bi"
 import From from '../From/From';
+import { useEffect } from 'react';
 function Deli() {
 
     const [modal, setModal] = useState(false)
     const toggleModal = () => {
         setModal(!modal)
     }
+    const [screenSize, setScreenSize] = useState(4)
+
+    useEffect(() => {
+        console.log(window.screen.width)
+
+        const getScreen = () => {
+            if (window.screen.width < 500) {
+                setScreenSize(1)
+            } else if (window.screen.width < 800) {
+                setScreenSize(2)
+            } else {
+                setScreenSize(4)
+            }
+        }
+        getScreen()
+    }, [window.screen.width])
+
 
     return (
         <div>
@@ -36,7 +54,7 @@ function Deli() {
                         // install Swiper modules
                         modules={[Navigation, Scrollbar, A11y, Autoplay]}
                         spaceBetween={1}
-                        slidesPerView={window.screen.width < 820 ? 2 : 4}
+                        slidesPerView={screenSize}
 
                         // autoplay={{ delay: 1000 }}
 

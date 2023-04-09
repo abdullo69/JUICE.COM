@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from "../../Navbar/Navbar"
 import "./Main.scss"
-import video from "../../images/video.mp4"
+import video from "../../../images/video.mp4"
 import Deli from '../Deli/Deli'
 function Main() {
     return (
