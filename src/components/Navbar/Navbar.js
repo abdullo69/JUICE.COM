@@ -56,7 +56,7 @@ function Navbar() {
                 </div>
                 {
                     search && (
-                        <div className="search">
+                        <div style={scrollClick ? { position: "fixed", marginTop: '0px', } : { marginTop: '0px' }} className="search">
                             <input type="text" placeholder='SEARCH' />
                             <FaTimes onClick={toSearch} className='fatimes' />
                         </div>
@@ -98,7 +98,7 @@ function Navbar() {
                             <ul>
                                 <a href="/"> <li>Home</li></a>
                                 <a href="our-story"><li>Our Story</li></a>
-                                <a href="our-ingdients"><li>Our Ingredients</li></a>
+                                <a href="our-ingredients"><li>Our Ingredients</li></a>
                                 <a href="shop"><li>Shop</li></a>
                             </ul>
 
