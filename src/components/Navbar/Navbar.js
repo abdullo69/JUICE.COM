@@ -43,13 +43,25 @@ function Navbar() {
     const toggleModal = () => {
         setModal(!modal)
     }
+
+    const [search, setSearch] = useState(false)
+    const toSearch = () => {
+        setSearch(!search)
+    }
     return (
         <div>
             <div className={`navbar ${getColor ? "black" : ""} `}>
                 <div className="nav_sub">
                     <p>Subscribe and save. Receive 10% off your order if you sign up for our subscription!</p>
                 </div>
-
+                {
+                    search && (
+                        <div className="search">
+                            <input type="text" placeholder='SEARCH' />
+                            <FaTimes onClick={toSearch} className='fatimes' />
+                        </div>
+                    )
+                }
                 <div className="navbar_logo">
 
                     <div className="icon">
@@ -61,7 +73,7 @@ function Navbar() {
                     <a href="/"><img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "3" } : { marginTop: "0px" }} src={logo} alt="" /></a>
 
                     <div className={`icon2 ${getColor ? "black" : ""} `} style={scrollClick ? { top: "0px", zIndex: "3", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }}>
-                        <a className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BsSearch /></a>
+                        <p className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BsSearch onClick={toSearch} /></p>
                         <a className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BiShoppingBag /></a>
 
                         <div className={`menyu_icon ${getColor ? "black" : ""} `} onClick={() => setIsMobile(!isMobile)}>
@@ -75,7 +87,7 @@ function Navbar() {
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="/"><li>Home</li></a>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-story"><li>Our Story</li></a>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-ingredients"><li>Our Ingredients</li></a>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="main"><li>Shop</li></a>
+                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="shop"><li>Shop</li></a>
 
                     </ul>
                 </div>

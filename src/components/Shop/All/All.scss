@@ -1,0 +1,35 @@
+.all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://d1ynl4hb5mx7r8.cloudfront.net/wp-content/uploads/2022/01/24114942/LiveInFullFlavor_Adcepts_DH_V2-092.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+
+    .all_text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: rgba(0, 255, 255, 0.308);
+        width: 100%;
+        height: 100%;
+
+        h1 {
+            font-size: 80px;
+        }
+
+        p {
+            width: 80%;
+            font-size: 20px;
+            padding-top: 30px;
+            line-height: 30px;
+        }
+    }
+}

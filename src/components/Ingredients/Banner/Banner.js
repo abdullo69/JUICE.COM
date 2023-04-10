@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../Navbar/Navbar'
 import "./Banner.scss"
-import our from "../../../StaticData2"
+import our from "../../../Static-data/StaticData2"
 import Ready from '../Ready/Ready'
 function Banner() {
     return (

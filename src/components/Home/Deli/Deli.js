@@ -12,12 +12,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay'
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai"
-import json from "../../../StaticData"
+import json from "../../../Static-data/StaticData"
 import { AiFillEye } from "react-icons/ai"
 import { BiShoppingBag } from "react-icons/bi"
 import From from '../From/From';
 import { useEffect } from 'react';
-function Deli() {
+import { Link } from 'react-router-dom';
+
+function Deli({ product }) {
 
     const [modal, setModal] = useState(false)
     const toggleModal = () => {
@@ -52,12 +54,10 @@ function Deli() {
                 <div>
                     <Swiper className='swiper'
                         // install Swiper modules
-                        modules={[Navigation, Scrollbar, A11y, Autoplay]}
+                        modules={[Navigation, Scrollbar, A11y, Autoplay,]}
                         spaceBetween={1}
                         slidesPerView={screenSize}
-
-                        // autoplay={{ delay: 1000 }}
-
+                        autoplay={{ delay: 1000 }}
                         navigation={{
                             prevEl: ".left",
                             nextEl: ".right",
@@ -70,19 +70,24 @@ function Deli() {
                         {
                             json.map((json, inx) => {
                                 return (
-                                    <SwiperSlide>
-                                        <div className="card">
-                                            <img src={json.img} alt="" />
-                                            <img className='img2' src={json.img2} alt="" />
-                                            <div className="card_text">
-                                                <h1>{json.title}</h1>
-                                                <div className='p'><p style={{ color: "aqua" }}>{json.price}</p></div>
-                                                <div className="card_icon">
-                                                    <h3><BiShoppingBag style={{ color: "aqua" }} /> Read More</h3>
-                                                    <h3 onClick={toggleModal}><AiFillEye color='aqua' /> Quick View</h3>
+                                    <SwiperSlide className='cards'>
+                                        <Link to={`product/${product}`} state={product} className='link'>
+                                            <div className="card">
+                                                <div className="card_img">
+                                                    <img src={json.img} alt="" />
+                                                    <img className='img2' src={json.img2} alt="" />
+                                                </div>
+                                                <div className="card_text">
+                                                    <h1>{json.title}</h1>
+                                                    <div className='p'><p style={{ color: "aqua" }}>{json.price}</p></div>
+                                                    <div className="card_icon">
+                                                        <h3><BiShoppingBag style={{ color: "aqua" }} /> Read More</h3>
+                                                        <h3 onClick={toggleModal}><AiFillEye color='aqua' /> Quick View</h3>
+                                                    </div>
+                                                    <div className="card_t"></div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </SwiperSlide>
                                 )
                             })
