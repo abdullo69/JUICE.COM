@@ -82,7 +82,7 @@ function Navbar() {
                     </div>
                 </div>
 
-                <div style={scrollClick ? { position: "fixed", background: "white", color: "black", paddingLeft: "5px", top: 0, transition: "1s", zIndex: "2" } : { background: "unset" }} className="nav_text">
+                <div style={scrollClick ? { position: "fixed", background: "white", color: "black", paddingLeft: "5px", top: 0, zIndex: "2" } : { background: "unset" }} className="nav_text">
                     <ul className={isMobile ? "media" : ""}>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="/"><li>Home</li></a>
                         <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-story"><li>Our Story</li></a>
