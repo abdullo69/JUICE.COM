@@ -5,7 +5,7 @@ import { FaBars, FaFacebookF, FaTimes } from "react-icons/fa"
 import logo from "../../images/logo.png"
 import { BsSearch } from "react-icons/bs"
 import { BiShoppingBag } from "react-icons/bi"
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 function Navbar() {
     const [isMobile, setIsMobile] = useState(false)
     const [scrollClick, setScrollClick] = useState(false)
@@ -14,7 +14,6 @@ function Navbar() {
 
     useEffect(() => {
         window.addEventListener('scroll', function () {
-            console.log(window.scrollY)
 
             if (window.scrollY > 120) {
                 setScrollClick(true)
@@ -65,48 +64,47 @@ function Navbar() {
                 <div className="navbar_logo">
 
                     <div className="icon">
-                        <a href="#"><AiOutlineTwitter /></a>
-                        <a href="#"><FaFacebookF /></a>
-                        <a href="#"> <AiOutlineInstagram /></a>
+                        <Link to="#"><AiOutlineTwitter /></Link>
+                        <Link to="#"><FaFacebookF /></Link>
+                        <Link to="#"> <AiOutlineInstagram /></Link>
                     </div>
 
-                    <a href="/"><img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "3" } : { marginTop: "0px" }} src={logo} alt="" /></a>
+                    <Link to="/" style={scrollClick ? { zIndex: 999 } : { zIndex: -1 }}><img style={scrollClick ? { top: "-20px", left: "0", position: "fixed", zIndex: "3" } : { marginTop: "0px" }} src={logo} alt="" /></Link>
 
                     <div className={`icon2 ${getColor ? "black" : ""} `} style={scrollClick ? { top: "0px", zIndex: "3", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }}>
                         <p className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BsSearch onClick={toSearch} /></p>
-                        <a className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BiShoppingBag /></a>
+                        <Link className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} to="/shopping_cart"><BiShoppingBag /></Link>
 
                         <div className={`menyu_icon ${getColor ? "black" : ""} `} onClick={() => setIsMobile(!isMobile)}>
-                            {isMobile ? (<FaTimes onClick={toggleModal} />) : (<FaBars onClick={toggleModal} />)}
+                            {isMobile ? (<FaTimes className='fa-times ' onClick={toggleModal} />) : (<FaBars onClick={toggleModal} />)}
                         </div>
                     </div>
                 </div>
 
                 <div style={scrollClick ? { position: "fixed", background: "white", color: "black", paddingLeft: "5px", top: 0, zIndex: "2" } : { background: "unset" }} className="nav_text">
                     <ul className={isMobile ? "media" : ""}>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="/"><li>Home</li></a>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-story"><li>Our Story</li></a>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="our-ingredients"><li>Our Ingredients</li></a>
-                        <a style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} href="shop"><li>Shop</li></a>
-
+                        <Link style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} to="/"><li>Home</li></Link>
+                        <Link style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} to="/our-story"><li>Our Story</li></Link>
+                        <Link style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} to="/our-ingredients"><li>Our Ingredients</li></Link>
+                        <Link style={scrollClick ? { paddingLeft: "30px", color: "black", textDecoration: "none", transition: "0.5s" } : { paddingLeft: "40px", textDecoration: "none" }} to="/shop"><li>Shop</li></Link>
                     </ul>
                 </div>
 
                 {
                     modal && (
-                        <div style={scrollClick ? { position: "fixed" } : { position: "absolute" }} className={`media_ul ${getColor ? "black" : ""} `} >
+                        <div style={scrollClick ? { position: "fixed", marginTop: "60px" } : { position: "absolute" }} className={`media_ul ${getColor ? "black" : ""} `} >
                             <ul>
-                                <a href="/"> <li>Home</li></a>
-                                <a href="our-story"><li>Our Story</li></a>
-                                <a href="our-ingredients"><li>Our Ingredients</li></a>
-                                <a href="shop"><li>Shop</li></a>
+                                <Link to="/"> <li>Home</li></Link>
+                                <Link to="/our-story"><li>Our Story</li></Link>
+                                <Link to="/our-ingredients"><li>Our Ingredients</li></Link>
+                                <Link to="/shop"><li>Shop</li></Link>
                             </ul>
 
 
                             <div style={{ marginTop: "20px", textDecoration: "undirline" }} className="icon">
-                                <a href="#"><AiOutlineTwitter /></a>
-                                <a href="#"><FaFacebookF /></a>
-                                <a href="#"> <AiOutlineInstagram /></a>
+                                <Link to="#"><AiOutlineTwitter /></Link>
+                                <Link to="#"><FaFacebookF /></Link>
+                                <Link to="#"> <AiOutlineInstagram /></Link>
                             </div>
                         </div>
                     )

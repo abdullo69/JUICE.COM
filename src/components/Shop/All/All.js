@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from "../../Navbar/Navbar"
 import Shop_cart from '../Shop_cart/Shop_cart'
+import staticData from '../../../Static-data/StaticDataShop';
+
 import "./All.scss"
 function All() {
     return (

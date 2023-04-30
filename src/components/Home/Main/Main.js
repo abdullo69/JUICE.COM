@@ -1,14 +1,16 @@
-import React from 'react'
-import Navbar from "../../Navbar/Navbar"
-import "./Main.scss"
-import video from "../../../images/video.mp4"
-import Deli from '../Deli/Deli'
+import React, { useState, useEffect } from 'react';
+import Navbar from '../../Navbar/Navbar';
+import './Main.scss';
+import video from '../../../images/video.mp4';
+import Deli from '../Deli/Deli';
+import staticData from '../../../Static-data/StaticData';
+
 function Main() {
     return (
         <div>
-            <div className='main'>
+            <div className="main">
                 <Navbar />
-                <video muted autoPlay loop className='video'>
+                <video muted autoPlay loop className="video">
                     <source src={video} type="video/mp4" />
                 </video>
 
@@ -16,11 +18,12 @@ function Main() {
                     <h1>ESCAPE THE ORDINARY</h1>
                     <button>SHOP NOW</button>
                 </div>
-
             </div>
+
+
             <Deli />
         </div>
-    )
+    );
 }
 
-export default Main
+export default Main;

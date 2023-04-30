@@ -19,7 +19,7 @@ import From from '../From/From';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Deli({ product }) {
+function Deli() {
 
     const [modal, setModal] = useState(false)
     const toggleModal = () => {
@@ -41,7 +41,6 @@ function Deli({ product }) {
         }
         getScreen()
     }, [window.screen.width])
-
 
     return (
         <div>
@@ -71,7 +70,7 @@ function Deli({ product }) {
                             json.map((json, inx) => {
                                 return (
                                     <SwiperSlide className='cards'>
-                                        <Link to={`product/${product}`} state={product} className='link'>
+                                        <Link to={`product/${(inx + 1)}`} state={json} className='link'>
                                             <div className="card">
                                                 <div className="card_img">
                                                     <img src={json.img} alt="" />
