@@ -10,6 +10,7 @@ import All from './components/Shop/All/All';
 import SinglePage1 from './components/SinglePage/SinglePage1/SinglePage1';
 import Add_to_cart from './Add_to_cart/Add_to_cart';
 import { ProductContextProvider } from './context/ProductContext';
+import User from './User/User';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ root.render(
           <Route path='shop' element={<All />} />
           <Route path='product/:id' element={<SinglePage1 />} />
           <Route path='shopping_cart' element={<Add_to_cart />} />
+          <Route path='user' element={<User />} />
           <Route exact path='/' element={<App />} />
         </Routes>
       </BrowserRouter>

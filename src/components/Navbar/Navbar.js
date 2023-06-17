@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
-import { AiOutlineTwitter, AiOutlineInstagram, AiOutlineBars } from "react-icons/ai"
+import { AiOutlineTwitter, AiOutlineInstagram, AiOutlineUser } from "react-icons/ai"
 import { FaBars, FaFacebookF, FaTimes } from "react-icons/fa"
 import logo from "../../images/logo.png"
 import { BsSearch } from "react-icons/bs"
@@ -74,6 +74,7 @@ function Navbar() {
                     <div className={`icon2 ${getColor ? "black" : ""} `} style={scrollClick ? { top: "0px", zIndex: "3", color: "black", position: "fixed", right: "0px", marginTop: "10px" } : { marginTop: "0px" }}>
                         <p className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} href="#"><BsSearch onClick={toSearch} /></p>
                         <Link className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} to="/shopping_cart"><BiShoppingBag /></Link>
+                        <Link className={`${getColor ? "black" : ""}`} style={scrollClick ? { color: "black" } : {}} to="/user"><AiOutlineUser /></Link>
 
                         <div className={`menyu_icon ${getColor ? "black" : ""} `} onClick={() => setIsMobile(!isMobile)}>
                             {isMobile ? (<FaTimes className='fa-times ' onClick={toggleModal} />) : (<FaBars onClick={toggleModal} />)}
